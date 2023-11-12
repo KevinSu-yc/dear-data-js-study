@@ -1,0 +1,169 @@
+[{
+        "date": "2021-10-24",
+        "numberOfNewWords": 9,
+        "difficulty": 2.9,
+        "numberOfNotedWords": 0,
+        "totalSearches": 13,
+        "englishSearches": 10,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 9,
+                "score": 89,
+                "tries": 2
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 18,
+                "score": 67,
+                "tries": 3
+            }
+        ]
+    },
+    {
+        "date": "2021-10-25",
+        "numberOfNewWords": 5,
+        "difficulty": 3.4,
+        "numberOfNotedWords": 0,
+        "totalSearches": 3,
+        "englishSearches": 2,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 5,
+                "score": 80,
+                "tries": 2
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 9,
+                "score": 67,
+                "tries": 2
+            }
+        ]
+    },
+    {
+        "date": "2021-10-26",
+        "numberOfNewWords": 9,
+        "difficulty": 3,
+        "numberOfNotedWords": 0,
+        "totalSearches": 2,
+        "englishSearches": 1,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 9,
+                "score": 100,
+                "tries": 1
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 5,
+                "score": 80,
+                "tries": 2
+            }
+        ]
+    },
+    {
+        "date": "2021-10-27",
+        "numberOfNewWords": 14,
+        "difficulty": 3.4,
+        "numberOfNotedWords": 0,
+        "totalSearches": 6,
+        "englishSearches": 3,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 14,
+                "score": 93,
+                "tries": 2
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 9,
+                "score": 89,
+                "tries": 2
+            }
+        ]
+    },
+    {
+        "date": "2021-10-28",
+        "numberOfNewWords": 6,
+        "difficulty": 2.8,
+        "numberOfNotedWords": 0,
+        "totalSearches": 5,
+        "englishSearches": 3,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 6,
+                "score": 100,
+                "tries": 1
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 14,
+                "score": 100,
+                "tries": 1
+            }
+        ]
+    },
+    {
+        "date": "2021-10-29",
+        "numberOfNewWords": 12,
+        "difficulty": 3.5,
+        "numberOfNotedWords": 0,
+        "totalSearches": 4,
+        "englishSearches": 2,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 12,
+                "score": 100,
+                "tries": 1
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 6,
+                "score": 83,
+                "tries": 2
+            }
+        ]
+    },
+    {
+        "date": "2021-10-30",
+        "numberOfNewWords": 2,
+        "difficulty": 3.5,
+        "numberOfNotedWords": 0,
+        "totalSearches": 6,
+        "englishSearches": 4,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 2,
+                "score": 100,
+                "tries": 1
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 12,
+                "score": 92,
+                "tries": 3
+            }
+        ]
+    },
+    {
+        "date": "2021-10-31",
+        "numberOfNewWords": 9,
+        "difficulty": 3.1,
+        "numberOfNotedWords": 0,
+        "totalSearches": 7,
+        "englishSearches": 2,
+        "testPerformances": [{
+                "dayOfTestedWords": "the same day",
+                "numberOfTestedWords": 9,
+                "score": 89,
+                "tries": 2
+            },
+            {
+                "dayOfTestedWords": "the day before",
+                "numberOfTestedWords": 2,
+                "score": 100,
+                "tries": 1
+            }
+        ]
+    }
+]

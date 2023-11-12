@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yuan-Chun Su Term Project Final</title>
+
+    <script src="d3.min.js"></script>
+    <style>
+        body {
+            margin: 1rem 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Test Scores on Quizlet Variation Plot</h1>
+
+    <p>
+        <span>Date Range: </span>
+        <select id="selectDate" name="selectDate" title="Date Range">
+            <option value="whole">Whole Data</option>
+            <option value="firstHalf">First Half</option>
+            <option value="secondHalf">Second Half</option>
+        </select>
+    </p>
+
+    <ul>
+        <li>
+            <!-- reference for setting the checkbox to checked: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox -->
+            <!-- reference for setting the checkbox to disabled: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled -->
+            <!-- checked is to set the checkbox checked as default, disabled is to set this checkbox unable to change -->
+            <input type="checkbox" id="sameDayScore" checked disabled>
+            <!-- the checked box should always be checked and can't be change by the users -->
+            <label for="sameDayScore">Test scores on the same day</label>
+        </li>
+        <li>
+            <input type="checkbox" id="nextDayScore" checked>
+            <label for="nextDayScore">Test scores on the next day</label>
+        </li>
+        <li>
+            <input type="checkbox" id="enSearchArea" checked>
+            <label for="enSearchArea">Percentage of English Searches</label>
+        </li>
+        <li>
+            Decreasing Lines
+            <ul>
+                <li>
+                    <input type="checkbox" id="scoreDecreasing" checked>
+                    <label for="scoreDecreasing">Test Scores</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="percentageDecreasing">
+                    <label for="percentageDecreasing">Percentage of English Searches</label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Improving or Stay the Same Lines
+            <ul>
+                <li>
+                    <input type="checkbox" id="scoreNotDecreasing" checked>
+                    <label for="scoreNotDecreasing">Test Scores</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="percentageNotDecreasing">
+                    <label for="percentageNotDecreasing">Percentage of English Searches</label>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div id="plot"></div>
+
+    <!-- set the max width of this div to 800px so the content won't go too wide -->
+    <div style="max-width: 800px">
+        <h3><u>Question I'm Exploring</u></h3>
+        <p>While creating this plot, I'm trying to explore:
+            <b>
+                As I am familiar with more English words, how will my searching habit affect my test scores on Quizlet?
+            </b>
+        </p>
+
+        <h3><u>Data I Used For This Visualization</u></h3>
+        <ul>
+            <li>
+                <b>Date of every observation:</b> The X axis value of this plot. I started to collect my data everyday
+                since October 18th until December 15th. However I only started taking two tests every day after
+                October 23rd so I didn't show the data before on my final visualization.
+            </li>
+            <li>
+                <b>Amount of noted new English words each day</b>: When I read or hear a word that I don't know the
+                meaning, I will record the word. At the end of each day, I will have a list of noted English words.
+                This is shown by the radius of the blue circle in this plot.
+            </li>
+            <li>
+                <b>Amount of searches I made each day and how many of them are in English</b>: I'll record every
+                searches I made on different search platform (Google, YouTube, Amazon, etc.) so I can calculate the
+                percentage of English searched I made each day. This is shown by the pink area in this graph
+            </li>
+            <li>
+                <b>Test scores on Quizlet</b>: Quizlet is a learning app
+                (<a href="https://quizlet.com/">See official website of Quizlet</a>)
+                that provide a function to create tests based on
+                the words noted by the users. The scores I get on the tests can
+                <b>indicate how well I'm learning new English words.</b>
+                At the end of each day, I will take a test based on the words noted on that day.
+                In addition, to see if I'm really memorizing the words, I will take another test based on the same list
+                of words on the next day. This is shoen by the Y axis value of the circles.
+            </li>
+            <li><a href="part_data.json">See part of my collected data in JSON format</a></li>
+            <li><a href="term_project_data_table.pdf">See table of my collected data</a></li>
+        </ul>
+
+        <h3><u>Choosing the Type of My Visualization</u></h3>
+        <p>
+            For this visualization, I'm trying to create a graph that's <b>similar to a cleveland dot plot</b>
+            that draws pairs of circles linked by lines. (Cleveland dot plot was mentioned in previous classes and there
+            was an example provided in the example_cleveland_dot_plot file from class 9 materials.)
+            However, to fit the data I am collecting, I made some adjustment in my plot.
+            Since I wanted to see how well I am learning the new English words I noted everyday, I'm not only taking
+            tests at the end of everyday but also taking tests about the same list of words on the next day. By using
+            the concept of cleveland dot plot, I can
+            <b>observe the changes between the scores of two tests I take for the same words on different days.</b>
+            I think cleveland dot plot suits well for my data when reviewing it so I tried
+            to implement it to this visualization.
+        </p>
+
+        <p>
+            The other kind of graph I used in my visualization was <b>area graph</b> I learned from:
+            <a
+                href="https://datavizcatalogue.com/methods/area_graph.html">https://datavizcatalogue.com/methods/area_graph.html</a>.
+            It's a simpler version of stacked area graph mentioned in class but I only used area graph just to see how
+            the percentage of English searches I made changes day by day. I wanted to see the relationship between my
+            searching habit and my test scores on Quizlet, so I add the area graph about the percentage of English
+            searches I made every day as a background of this visualization.
+        </p>
+
+        <h3><u>Adding Interacitve Design to My Visualization</u></h3>
+        <p>
+            Following the suggestions I got from Jay and my classmates in class, I tried to add options to this
+            visualization.
+            <ul>
+                <li>
+                    By selecting the date range, the users can choose to see which part of my data so the
+                    circles won't be clustered as the plot for every day.
+                </li>
+                <li>
+                    By checking the box for the scores on the next
+                    day, the users can see the green circles and the lines that connecting every pair of circles.
+                </li>
+                <li>
+                    By checking the box for percentage of English searches, the users can see the area graph showing the
+                    change of my searching habit.
+                </li>
+                <li>
+                    By checking the box for different lines, the users can see the blue and red lines then see the
+                    relationships between them.
+                </li>
+            </ul>
+            Also, I tried to add vertical lines to help users to see which date the circles are refer to when they move
+            the mouse onto the circles, but there are already a lot of lines in my plot so I didn't add the vertical
+            lines at last.
+        </p>
+
+        <h3><u>My Observations For This Visualization</u></h3>
+        <p>
+            By observing this visualization, I can see that most of the red lines connecting the cicles (represent
+            decreasing scores) are matching the red lines on the area graph (represent decreasing percentage of
+            English searches) and most of the blue lines are matching as well. Thus I find out that this plot is giving
+            the idea of:
+            <b>
+                when the percentage of English searches I made increases on the next day, my scores on Quizlet are more
+                likely
+                to improve or remain the same on the next day.
+            </b>
+            By choosing which kind of lines to show on the plot using the provided checkboxes, the relationships can be
+            easier to see.
+        </p>
+        <p>
+            In addition,
+            <b>I assume the amount of tested words is also a factor that affects my test scores,</b>
+            so the larger
+            circles should fall on lower positions. According to this plot it quite support my expectation, I can
+            see most of the smaller circles fall on the top of this plot. That means
+            I can learn better when the amount of noted words are under a certain number. By hiding the area graph of
+            percentage of English searches and the test scores on the next day using the check box,
+            I can focus more on the difference of the blue circles to see this relationship.
+        </p>
+
+        <hr>
+        <p>For more detail, see my <a href="report.pdf">final report</a></p>
+    </div>
+
+</body>
+<script src="main.js"></script>
+
+</html>
