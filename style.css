@@ -1,0 +1,180 @@
+:root {
+    --black: #333333;
+    --dark-blue: #1d3557;
+    --blue: #457b9d;
+    --grey: #888888;
+
+    --mb-small: 30px;
+    --mb-medium: 60px;
+    --mb-paragraph: 15px;
+    --mb-paragraph-s: 5px;
+  }
+
+body {
+    margin: 100px 50px;
+}
+
+* {
+    color: var(--black);
+    font-family: 'Merriweather', serif;
+    line-height: 180%;
+    letter-spacing: 0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.section-900 {
+    width: 800px;
+    margin: 0px auto;
+}
+
+h1, h2, h3, h4 {
+    color: var(--dark-blue);
+}
+
+p {
+    font-weight: 300;
+    margin-bottom: var(--mb-paragraph);
+}
+
+ul {
+    list-style: none;
+}
+
+p, li {
+    font-size: 14px;
+}
+
+legend {
+    font-size: 12px;
+}
+
+fieldset {
+    margin-bottom: var(--mb-paragraph-s);
+    padding: 5px 15px 15px 15px;
+    border-radius: 4px;
+}
+
+input[type=checkbox] {
+    margin-right: 2px;
+}
+
+.plot-option-flex {
+    display: flex;
+    gap: 15px;
+    margin-bottom: var(--mb-paragraph-s);
+}
+
+.select-caption {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.date-range-select {
+    padding: 6px 12px;
+    margin-bottom: var(--mb-small);
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.text-grey {
+    color: var(--grey);
+}
+
+.mb-small {
+    margin-bottom: var(--mb-medium);
+}
+
+.mb-paragraph {
+    margin-bottom: var(--mb-paragraph);
+}
+
+.mb-paragraph-s {
+    margin-bottom: var(--mb-paragraph-s);
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    opacity: 0.7;
+}
+
+.small-dot {
+    width: 10px;
+    height: 10px;
+}
+
+.medium-dot {
+    width: 15px;
+    height: 15px;
+}
+
+.blue-dot {
+    border: 1px solid #403ba3;
+    background-color: #aface3;
+}
+
+.green-dot {
+    border: 1px solid #4c873a;
+    background-color: #7ccf63;
+}
+
+.legend-row-flex {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: var(--mb-paragraph);
+}
+
+.legend-row-flex div{
+    flex-shrink: 0;
+}
+
+.legend-row-flex p{
+    margin: 0;
+    font-size: 12px;
+}
+
+.red-line {
+    width:20px;
+    height: 2px;
+    background-color: red;
+}
+
+.blue-line {
+    width:20px;
+    height: 2px;
+    background-color: blue;
+}
+
+.pink-area {
+    height: 20px;
+    width: 20px;
+    background-color: pink;
+    opacity: 0.5;
+}
+
+.fieldset-flex {
+    padding: 20px 20px 5px 20px;
+    display: flex;
+    gap: 30px;
+    background-color: #f3f3f3;
+    border-color: #ccc;
+    margin-bottom: var(--mb-paragraph);
+}
+
+#plot {
+    width: 1100px;
+    margin:auto;
+}

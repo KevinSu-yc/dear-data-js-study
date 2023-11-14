@@ -7,7 +7,7 @@ let plotHeight = 650;
 let margin = {
     left: 80,
     right: 80,
-    top: 160,
+    top: 50,
     bottom: 70
 };
 
@@ -321,14 +321,14 @@ function drawPlot(dataset) {
     let xAxisLabel = canvas.append("text")
         .attr("class", "axisLabel")
         .attr("x", plotWidth / 2)
-        .attr("y", plotHeight - margin.bottom / 5)
+        .attr("y", plotHeight - margin.bottom / 10)
         .attr("text-anchor", "middle") //adapted from Jay Taylor-Laird's code from lab 7 starter code, rotate the text for 90 degrees
         .text("Date of Every Observation (MM-DD)");
 
     let yAxisLabel = canvas.append("text")
         .attr("class", "axisLabel")
         .attr("x", plotHeight / -2) //x and y value should be consider switching since y axis label is rotated
-        .attr("y", margin.left / 2)
+        .attr("y", margin.left / 3)
         .attr("text-anchor", "middle")
         .attr("transform", "rotate(-90)") //adapted from Jay Taylor-Laird's code from lab 7 starter code, rotate the text for 90 degrees
         .text("Test Score on Quizlet Each Day (%)");
@@ -344,14 +344,17 @@ function drawPlot(dataset) {
         /* create another Y axis label for the percentage of English searches and place it on the right of this plot */
         let yAxisLabelRight = canvas.append("text")
             .attr("class", "axisLabel")
-            .attr("x", plotHeight / 2 + 50) //x and y value should be consider switching since y axis label is rotated
-            .attr("y", -plotWidth + margin.right / 2)
+            .attr("x", plotHeight / 2) //x and y value should be consider switching since y axis label is rotated
+            .attr("y", -plotWidth + margin.right / 3)
             .attr("text-anchor", "middle")
             .attr("transform", "rotate(90)") //adapted from Jay Taylor-Laird's code from lab 7 starter code, rotate the text for 90 degrees
             .text("Percentage of English Searches Each Day (%)");
     }
 
-    /* create a box to contain keys that explain this graph */
+
+    /* Replace key box with html
+
+    // create a box to contain keys that explain this graph
     let keyBox = canvas.append("rect")
         .attr("x", 2)
         .attr("y", 10)
@@ -360,12 +363,12 @@ function drawPlot(dataset) {
         .attr("fill", "#eee")
         .attr("stroke", "grey");
 
-    /* set variables to help positioning the explanations */
+    // set variables to help positioning the explanations
     let explainCircleX = margin.left / 4;
     let explainCircleY = margin.top / 6;
     let explainCircleR = 10;
 
-    /* create the explanations */
+    // create the explanations
     let firstScoreCircle = canvas.append("circle")
         .attr("cx", explainCircleX)
         .attr("cy", explainCircleY)
@@ -392,7 +395,7 @@ function drawPlot(dataset) {
         .attr("y", explainCircleY + explainCircleR / 2)
         .text("Test scores on the next day");
 
-    /* create 3 circle using for loop to show different radius */
+    // create 3 circle using for loop to show different radius
     for (let i = 0; i < 3; i++) {
         let radiusCircles = canvas.append("circle")
             .attr("cx", explainCircleX + i * 25) //add 25 to the x position for every cycle
@@ -444,6 +447,6 @@ function drawPlot(dataset) {
         .attr("x", explainCircleX + 450)
         .attr("y", explainCircleY + 40)
         .text("Test Scores/Percentage of English Searches Improving or Stay the Same");
-
+    */
     return dataset;
 }
